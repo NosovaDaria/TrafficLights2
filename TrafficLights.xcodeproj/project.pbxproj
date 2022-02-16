@@ -12,7 +12,6 @@
 		4B40DE3E27BD1C8300CA7959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B40DE3D27BD1C8300CA7959 /* Assets.xcassets */; };
 		4B40DE4127BD1C8300CA7959 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B40DE4027BD1C8300CA7959 /* Preview Assets.xcassets */; };
 		4B40DE4827BD26BB00CA7959 /* LightCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40DE4727BD26BB00CA7959 /* LightCircle.swift */; };
-		4B40DE4A27BD4A7B00CA7959 /* TrafficLightsCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40DE4927BD4A7B00CA7959 /* TrafficLightsCircles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +21,6 @@
 		4B40DE3D27BD1C8300CA7959 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B40DE4027BD1C8300CA7959 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B40DE4727BD26BB00CA7959 /* LightCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightCircle.swift; sourceTree = "<group>"; };
-		4B40DE4927BD4A7B00CA7959 /* TrafficLightsCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightsCircles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +55,6 @@
 			children = (
 				4B40DE3927BD1C8200CA7959 /* TrafficLightsApp.swift */,
 				4B40DE3B27BD1C8200CA7959 /* ContentView.swift */,
-				4B40DE4927BD4A7B00CA7959 /* TrafficLightsCircles.swift */,
 				4B40DE4727BD26BB00CA7959 /* LightCircle.swift */,
 				4B40DE3D27BD1C8300CA7959 /* Assets.xcassets */,
 				4B40DE3F27BD1C8300CA7959 /* Preview Content */,
@@ -143,7 +140,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B40DE4A27BD4A7B00CA7959 /* TrafficLightsCircles.swift in Sources */,
 				4B40DE4827BD26BB00CA7959 /* LightCircle.swift in Sources */,
 				4B40DE3C27BD1C8200CA7959 /* ContentView.swift in Sources */,
 				4B40DE3A27BD1C8200CA7959 /* TrafficLightsApp.swift in Sources */,

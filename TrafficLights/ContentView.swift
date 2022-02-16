@@ -13,53 +13,52 @@ enum CurrentLight {
 
 struct ContentView: View {
   
-  @State private var currentLight = CurrentLight.red
   let lightIsOff = 0.4
   let lightIsOn = 1.0
-  @State var redOpacity = 0.4
-  @State var yellowOpacity = 0.4
-  @State var greenOpacity = 0.4
-  @State private var text = "START"
+  @State private var currentLight = CurrentLight.red
+  @State var redCurrentOpacity = 0.4
+  @State var yellowCurrentOpacity = 0.4
+  @State var greenCurrentOpacity = 0.4
+  @State private var buttonTitle = "START"
   
     var body: some View {
       ZStack {
-        Color.black
+        Color.gray
           .ignoresSafeArea()
         VStack {
-          TrafficLightsCircles(redOpacity: redOpacity, yellowOpacity: redOpacity, greenOpacity: redOpacity)
-            Spacer()
+          LightCircle(color: .red, opacity: redCurrentOpacity)
+          LightCircle(color: .yellow, opacity: yellowCurrentOpacity)
+          LightCircle(color: .green, opacity: greenCurrentOpacity)
           
-          Button(action: {changeLights()}) {
-            Text(text)
-              .font(.title)
-              .bold()
-              .foregroundColor(.white)
-              .frame(width: 180, height: 60, alignment: .center)
-              .border(Color.white, width: 2.0)
-              .cornerRadius(6.0)
+          Spacer()
+
+
+          Button(buttonTitle) {
+            buttonTitle = "NEXT"
+            switch currentLight {
+            case .red:
+              redCurrentOpacity = lightIsOn
+              greenCurrentOpacity = lightIsOff
+              currentLight = CurrentLight.yellow
+            case .yellow:
+              redCurrentOpacity = lightIsOff
+              yellowCurrentOpacity = lightIsOn
+              currentLight = CurrentLight.green
+            default:
+              yellowCurrentOpacity = lightIsOff
+              greenCurrentOpacity = lightIsOn
+              currentLight = CurrentLight.red
+            }
           }
+          .buttonStyle(.bordered)
+          .font(.title)
+          .foregroundColor(.white)
+          .frame(width: 180, height: 60, alignment: .center)
+          .border(Color.white, width: 3.0)
+          .cornerRadius(7.0)
         }
       }
     }
-  func changeLights() {
-    text = "NEXT"
-    
-    switch currentLight {
-    case .red:
-      redOpacity = lightIsOn
-      greenOpacity = lightIsOff
-      currentLight = CurrentLight.yellow
-    case .yellow:
-      redOpacity = lightIsOff
-      yellowOpacity = lightIsOn
-      currentLight = CurrentLight.green
-    default:
-      yellowOpacity = lightIsOff
-      greenOpacity = lightIsOn
-      currentLight = CurrentLight.red
-    }
-      
-  }
 }
 
 

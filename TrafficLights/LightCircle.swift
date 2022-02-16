@@ -16,7 +16,7 @@ struct LightCircle: View {
         .foregroundColor(color)
         .frame(width: 150, height: 150)
         .opacity(opacity)
-        .overlay(Circle() .stroke(Color.white, lineWidth: 2))
+        .overlay(Circle() .stroke(Color.white, lineWidth: 3))
         .padding(.top, 20)
         
     }
