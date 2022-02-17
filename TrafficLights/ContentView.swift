@@ -13,8 +13,8 @@ enum CurrentLight {
 
 struct ContentView: View {
   
-  let lightIsOff = 0.4
-  let lightIsOn = 1.0
+  private let lightIsOff = 0.4
+  private let lightIsOn = 1.0
   @State private var currentLight = CurrentLight.red
   @State var redCurrentOpacity = 0.4
   @State var yellowCurrentOpacity = 0.4
@@ -26,32 +26,15 @@ struct ContentView: View {
         Color.gray
           .ignoresSafeArea()
         VStack {
-          LightCircle(color: .red)
-            .opacity(redCurrentOpacity)
-          LightCircle(color: .yellow)
-            .opacity(yellowCurrentOpacity)
-          LightCircle(color: .green)
-            .opacity(greenCurrentOpacity)
+          LightCircle(color: .red, opacity: redCurrentOpacity)
+          LightCircle(color: .yellow, opacity: yellowCurrentOpacity)
+          LightCircle(color: .green, opacity: greenCurrentOpacity)
           
           Spacer()
 
 
           Button(buttonTitle) {
-            buttonTitle = "NEXT"
-            switch currentLight {
-            case .red:
-              redCurrentOpacity = lightIsOn
-              greenCurrentOpacity = lightIsOff
-              currentLight = CurrentLight.yellow
-            case .yellow:
-              redCurrentOpacity = lightIsOff
-              yellowCurrentOpacity = lightIsOn
-              currentLight = CurrentLight.green
-            default:
-              yellowCurrentOpacity = lightIsOff
-              greenCurrentOpacity = lightIsOn
-              currentLight = CurrentLight.red
-            }
+            changeLightColor()
           }
           .buttonStyle(.bordered)
           .font(.title)
@@ -62,6 +45,24 @@ struct ContentView: View {
         }
       }
     }
+  
+  private func changeLightColor() {
+    buttonTitle = "NEXT"
+    switch currentLight {
+    case .red:
+      redCurrentOpacity = lightIsOn
+      greenCurrentOpacity = lightIsOff
+      currentLight = CurrentLight.yellow
+    case .yellow:
+      redCurrentOpacity = lightIsOff
+      yellowCurrentOpacity = lightIsOn
+      currentLight = CurrentLight.green
+    default:
+      yellowCurrentOpacity = lightIsOff
+      greenCurrentOpacity = lightIsOn
+      currentLight = CurrentLight.red
+    }
+  }
 }
 
 
